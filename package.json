@@ -1,38 +1,45 @@
 {
-  "name": "d3-foo",
-  "version": "0.0.1",
-  "description": "{DESCRIPTION}",
-  "keywords": [
-    "d3",
-    "d3-module"
-  ],
-  "license": "BSD-3-Clause",
-  "main": "build/g-annotations.js",
-  "module": "index",
-  "homepage": "https://github.com/ft-interactive/g-annotations",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ft-interactive/g-annotations.git"
-  },
-  "scripts": {
-    "build": "rm -rf build && mkdir build && rollup --globals d3:d3 -f umd -n gAnnotations -o build/g-annotations.js -- index.js",
-    "test": "exit 0",
-    "prepare": "npm run build && npm run test && uglifyjs build/g-annotations.js -c -m -o build/g-annotations.min.js"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/preset-env": "^7.0.0-beta.54",
-    "@babel/register": "^7.0.0-beta.54",
-    "codecov": "^3.0.4",
-    "eslint": "^5.2.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "nyc": "^12.0.2",
-    "rollup": "^0.27.1",
-    "tape": "4",
-    "uglify-es": "^3.3.9"
-  },
-  "dependencies": {
-    "d3": "^5.5.0"
-  }
+    "name": "@financial-times/g-plugin",
+    "version": "0.0.0",
+    "description": "Base template for modern d3 plugins",
+    "keywords": [
+        "d3",
+        "d3-module"
+    ],
+    "license": "BSD-3-Clause",
+    "main": "build/g-plugin.js",
+    "module": "index",
+    "homepage": "https://github.com/ft-interactive/d3-plugin-starter",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ft-interactive/d3-plugin-starter.git"
+    },
+    "scripts": {
+        "build": "rm -rf build && mkdir build && rollup --globals d3:d3 -f umd -n GPlugin -o build/g-plugin.js -- index.js",
+        "test": "jest",
+        "prepare": "npm run build && npm run test && uglifyjs build/g-plugin.js -c -m -o build/g-plugin.min.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.55",
+        "@babel/preset-env": "^7.0.0-beta.55",
+        "@babel/register": "^7.0.0-beta.55",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.4.2",
+        "codecov": "^3.0.4",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint-plugin-import": "^2.13.0",
+        "jest": "^23.4.2",
+        "npm-prepublish": "^1.2.3",
+        "nyc": "^12.0.2",
+        "prettier-eslint": "^8.8.2",
+        "rollup": "^0.63.5",
+        "uglify-es": "^3.3.9"
+    },
+    "dependencies": {
+        "d3": "^5.5.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    }
 }
